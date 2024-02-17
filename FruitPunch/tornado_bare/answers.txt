@@ -1,0 +1,12 @@
+1. Is the current method of saving the classifier blocking to the tornado IOLoop? Justify your response.
+Yes it is blocking the IOLoop because saving to the database could take some time, and since tornado uses a single-threaded 
+event loop, any process that takes some time will block the IOLoop. 
+
+
+2. Would the models saved on one server be useable by another server if we migrated the saved
+documents in MongoDB? Justify your response.
+Yes because the models are declared as dictionaries so if they are migrated to another server the corressponding DSID will
+be able to access the correct model. 
+
+Group: Jaden Prawiro & Melodie Zhu
+
